@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -8,10 +9,29 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      // backgroundImage: {
+      //    "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      //    "gradient-conic":
+      //       "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      // },
+      keyframes: {
+        moveltr: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(600px)" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      animation: {
+        ltr: "moveltr 5s linear infinite forwards",
+      },
+      colors: {
+        primary: "#9259E3",
+        darkprimary: "#341E50",
+        darkgray: colors.gray[800],
+        lightgray: colors.gray[400],
       },
     },
   },
