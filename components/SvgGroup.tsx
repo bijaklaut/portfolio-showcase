@@ -86,6 +86,69 @@ export const InstagramSvg = ({ className }: { className: string }) => {
   );
 };
 
+export const CodeSvg = ({ className }: { className: string }) => {
+  return (
+    <svg
+      className={className}
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M14.9523 6.2635L10.4523 18.2635L9.04784 17.7368L13.5478 5.73682L14.9523 6.2635ZM19.1894 12.0001L15.9698 8.78042L17.0304 7.71976L21.3108 12.0001L17.0304 16.2804L15.9698 15.2198L19.1894 12.0001ZM8.03032 15.2198L4.81065 12.0002L8.03032 8.78049L6.96966 7.71983L2.68933 12.0002L6.96966 16.2805L8.03032 15.2198Z"
+        ></path>
+      </g>
+    </svg>
+  );
+};
+
+export const DatabaseSvg = ({ className }: { className: string }) => {
+  return (
+    <svg
+      className={className}
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <path d="M4 18V6" strokeWidth="1.5" strokeLinecap="round"></path>
+        <path d="M20 6V18" strokeWidth="1.5" strokeLinecap="round"></path>
+        <path
+          d="M12 10C16.4183 10 20 8.20914 20 6C20 3.79086 16.4183 2 12 2C7.58172 2 4 3.79086 4 6C4 8.20914 7.58172 10 12 10Z"
+          strokeWidth="1.5"
+        ></path>
+        <path
+          d="M20 12C20 14.2091 16.4183 16 12 16C7.58172 16 4 14.2091 4 12"
+          strokeWidth="1.5"
+        ></path>
+        <path
+          d="M20 18C20 20.2091 16.4183 22 12 22C7.58172 22 4 20.2091 4 18"
+          strokeWidth="1.5"
+        ></path>
+      </g>
+    </svg>
+  );
+};
+
 export const Template = ({ className }: { className: string }) => {
   return (
     <svg

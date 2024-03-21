@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
-import { inter } from "../../styles/fonts";
+
+export const metadata: Metadata = {
+  title: "Hudaa Eka Saputra | Projects",
+  description: "Personal website to showcase Hudaa Eka Saputra' Portfolios",
+};
 
 export default function Projects() {
   return (

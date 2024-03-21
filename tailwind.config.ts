@@ -29,7 +29,7 @@ const config: Config = {
       },
       colors: {
         primary: "#9259E3",
-        darkprimary: "#341E50",
+        darkprimary: "#201232",
         darkgray: colors.gray[800],
         lightgray: colors.gray[400],
       },

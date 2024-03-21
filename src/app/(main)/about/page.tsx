@@ -1,7 +1,15 @@
+import { Metadata } from "next";
+import { CodeSvg, DatabaseSvg } from "../../../../components/SvgGroup";
+
+export const metadata: Metadata = {
+  title: "Hudaa Eka Saputra | About",
+  description: "Personal website to showcase Hudaa Eka Saputra' Portfolios",
+};
+
 export default function About() {
   return (
-    <section>
-      <div className="header flex items-center gap-10">
+    <section className="pb-16 pt-16">
+      <div className="about mb-32 flex items-center gap-10">
         <div className="min-w-[45%] text-center text-5xl font-semibold">
           About Me
         </div>
@@ -20,6 +28,44 @@ export default function About() {
           minima possimus? Lorem ipsum dolor sit amet consectetur, adipisicing
           elit. Aliquam qui cum at accusamus odio laudantium voluptatem
           deserunt, voluptate obcaecati tenetur.
+        </div>
+      </div>
+      <div className="flex items-stretch justify-center gap-8">
+        <div className="flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-white px-5 py-14 text-darkgray">
+          <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-darkprimary text-white">
+            <CodeSvg className="h-12 w-12 fill-current" />
+          </div>
+          <span className="text-xl font-semibold">
+            Frontend Web Development
+          </span>
+          <span className="my-3">Here lies, the essence of creativities</span>
+          <h3 className="font-semibold">Got experience on</h3>
+          <div className="flex flex-col items-center">
+            <span>HTML</span>
+            <span>CSS (Tailwind CSS)</span>
+            <span>Javascript (Typescript)</span>
+            <span>React JS</span>
+            <span>Next JS</span>
+            <span>Daisy UI</span>
+            <span>Bootstrap</span>
+          </div>
+        </div>
+        <div className="flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-white px-5 py-14 text-darkgray">
+          <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-darkprimary text-white">
+            <DatabaseSvg className="h-10 w-10 stroke-current" />
+          </div>
+          <span className="text-xl font-semibold">Backend Web Development</span>
+          <span className="my-3">This is my so-so backend skills</span>
+          <h3 className="font-semibold">Got experience on</h3>
+          <div className="flex flex-col items-center">
+            <span>Node JS</span>
+            <span>Express JS</span>
+            <span>Mongo DB (Mongoose)</span>
+            <span>MySQL</span>
+            <span>Git</span>
+            <span>AWS S3 Storage</span>
+            <span>Midtrans Payment Gateway</span>
+          </div>
         </div>
       </div>
     </section>
