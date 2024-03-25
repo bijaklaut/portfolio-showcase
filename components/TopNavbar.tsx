@@ -4,11 +4,10 @@ import Link from "next/link";
 import { LongArrowLeftSvg } from "./SvgGroup";
 import { useCallback, useEffect, useRef } from "react";
 
-const Navbar = () => {
+export const TopNavbar = () => {
   const navbarRef = useRef<HTMLElement>(null);
   const scrollHandler = useCallback(() => {
     if (navbarRef.current) {
-      console.log("Navbar: ", navbarRef.current.className);
       if (window.scrollY > 0) {
         navbarRef.current.classList.replace("rest-navbar", "fixed-navbar");
       } else {
@@ -27,7 +26,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className="rest-navbar fixed flex h-16 w-full justify-between px-16 py-5 text-white/60 transition-all duration-300"
+      className="rest-navbar fixed z-10 flex h-16 w-full justify-between px-16 py-5 text-white/60 transition-all duration-300"
     >
       <div className="[&>*:hover]:text-white [&>*]:transition-all [&>*]:duration-300">
         <Link href={"/"}>
@@ -42,5 +41,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
