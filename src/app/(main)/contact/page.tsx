@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   GithubSvg,
   InstagramSvg,
@@ -10,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section>
+    <section className="relative z-0 h-screen w-full bg-gradient-to-b from-darkprimary to-black">
       <div className="contact-wrapper absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1 md:gap-10">
         {/* Github */}
         <motion.a
@@ -111,6 +112,12 @@ export default function Contact() {
           </motion.p>
           <InstagramSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </motion.a>
+      </div>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-md bg-white/80 px-3 py-1 text-sm text-zinc-900 backdrop-blur-md transition-transform duration-300 hover:-translate-y-2">
+        <span>{"Special thanks to "}</span>
+        <Link className="font-semibold" href={"https://www.chronark.com"}>
+          Chronark
+        </Link>
       </div>
     </section>
   );
