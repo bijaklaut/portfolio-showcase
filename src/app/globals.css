@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.fixed-navbar {
-  @apply bg-darkprimary/10 shadow-md backdrop-blur-[8px];
-}
-
-.rest-navbar {
-  @apply bg-transparent;
+@layer base {
+  .font-outline {
+    -webkit-text-stroke: 0.5px white;
+  }
 }
 
 :root {
@@ -32,4 +30,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.fixed-navbar {
+  @apply bg-darkprimary/10 shadow-md backdrop-blur-[8px];
+}
+
+.rest-navbar {
+  @apply bg-transparent;
 }
