@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, Poppins } from "next/font/google";
-
-export const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["200", "400", "600"],
-});
-
-export const inter = Inter({
-  subsets: ["latin"],
-  weight: ["200", "400", "600"],
-});
+import { poppins } from "./styles/fonts";
 
 export const metadata: Metadata = {
   title: "Bijaklaut | Personal Website",
@@ -24,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-darkprimary`}>{children}</body>
+      <body className={`${poppins.className}`}>{children}</body>
     </html>
   );
 }
