@@ -1,11 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  GithubSvg,
-  RedirectArrowSvg,
-} from "../../../../../components/SvgGroup";
-import { Slider } from "../../../../../components/Slider";
-import Image from "next/image";
+import { GithubSvg, RedirectArrowSvg } from "../../../../components/SvgGroup";
+import { Slider } from "../../../../components/Slider";
 
 export const metadata: Metadata = {
   title: "Project | Project Name",
@@ -74,10 +70,10 @@ export default function ProjectDetail() {
           </ul>
         </div>
       </div>
-      <div className="snapshot w-full bg-gradient-to-t from-darkprimary to-black py-20">
-        <div className="snapshot-content mx-auto flex w-full max-w-[1024px] flex-col items-center justify-center gap-20">
+      <div className="snapshot w-full bg-gradient-to-t from-darkprimary to-black pb-28 pt-20">
+        <div className="snapshot-content mx-auto flex w-full max-w-[1024px] flex-col items-center justify-center gap-14">
           <h2 className="text-center text-3xl font-semibold">Snapshot</h2>
-          <div className="flex gap-4 px-5 py-2 [&>*:has(:checked)]:bg-primary/80 [&>*:not(:has(:checked)):hover]:bg-darkprimary/100 [&>*:not(:has(:checked))]:bg-darkprimary/50 [&>*]:cursor-pointer [&>*]:rounded-xl [&>*]:px-10 [&>*]:py-2 [&>*]:transition-all [&>*]:duration-300">
+          <div className="flex gap-4 px-5 py-2 [&>*:has(:checked)]:bg-primary/80 [&>*:not(:has(:checked)):hover]:bg-darkprimary/100 [&>*:not(:has(:checked))]:bg-darkprimary/50 [&>*]:cursor-pointer [&>*]:rounded-xl [&>*]:px-8 [&>*]:py-2 [&>*]:transition-all [&>*]:duration-300">
             <label htmlFor="mobile">
               <input
                 className="hidden"

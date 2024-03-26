@@ -14,6 +14,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
   const [parentWidth, setParentWidth] = useState(0);
+  const [loading, setLoading] = useState(true);
   const parentRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = useCallback(() => {
@@ -36,7 +37,10 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
 
   const getParentWidth = useCallback(() => {
     if (parentRef.current) {
-      setParentWidth(parentRef.current.getBoundingClientRect().width);
+      setParentWidth(parentRef.current?.getBoundingClientRect().width);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     }
   }, []);
 
@@ -59,12 +63,15 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
   }, []);
 
   return (
-    <div>
-      <div ref={parentRef} className="flex w-[700px] flex-col gap-5 rounded-md">
+    <div
+      ref={parentRef}
+      className="flex aspect-video w-[700px] flex-col gap-5 rounded-md"
+    >
+      {!loading ? (
         <div className="relative w-full">
           {/* Previous */}
           <div
-            className="absolute top-1/2 z-10 -translate-y-1/2 translate-x-10 cursor-pointer"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 cursor-pointer"
             onClick={previousSlide}
           >
             <ArrowLeftSvg className="h-10 w-10 stroke-current" />
@@ -89,41 +96,38 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
             >
               {images.map((image, index) => {
                 return (
-                  <div key={index} className="relative w-full">
-                    <Image
-                      src={image.url}
-                      width={500}
-                      height={500}
-                      alt={image.title}
-                      className="aspect-video h-auto w-full"
-                    />
-                  </div>
+                  <Image
+                    key={index}
+                    src={image.url}
+                    width={500}
+                    height={500}
+                    alt={image.title}
+                    className="aspect-video h-auto w-full"
+                  />
                 );
               })}
             </div>
           </div>
-        </div>
-        {/* Dot Index */}
-        <div className="flex justify-center">
-          {images.map((_, index) => {
-            return (
-              <div key={index} onClick={() => goToIndex(index)}>
-                <svg
+          {/* Dot Index */}
+          <div className="absolute -bottom-7 left-1/2 flex -translate-x-1/2 justify-center gap-5">
+            {images.map((_, index) => {
+              return (
+                <div
+                  key={index}
+                  onClick={() => goToIndex(index)}
                   className={
                     currentIndex === index
-                      ? `w-5 fill-current text-red-500 transition-all duration-300 `
-                      : `w-5 fill-current text-white transition-all duration-300 `
+                      ? `h-2 w-8 rounded-full bg-primary fill-current transition-all duration-300 `
+                      : `h-2 w-2 rounded-full bg-white fill-current transition-all duration-300 `
                   }
-                  viewBox="0 0 15 15"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M9.875 7.5C9.875 8.12989 9.62478 8.73398 9.17938 9.17938C8.73398 9.62478 8.12989 9.875 7.5 9.875C6.87011 9.875 6.26602 9.62478 5.82062 9.17938C5.37522 8.73398 5.125 8.12989 5.125 7.5C5.125 6.87011 5.37522 6.26602 5.82062 5.82062C6.26602 5.37522 6.87011 5.125 7.5 5.125C8.12989 5.125 8.73398 5.37522 9.17938 5.82062C9.62478 6.26602 9.875 6.87011 9.875 7.5Z" />
-                </svg>
-              </div>
-            );
-          })}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="aspect-video h-[400px] animate-pulse rounded-md bg-primary/50 backdrop-blur-md"></div>
+      )}
     </div>
   );
 };

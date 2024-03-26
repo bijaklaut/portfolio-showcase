@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CodeSvg, DatabaseSvg } from "../../../../components/SvgGroup";
+import { CodeSvg, DatabaseSvg } from "../../../components/SvgGroup";
 
 export const metadata: Metadata = {
   title: "Hudaa Eka Saputra | About",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { TopNavbar } from "../../../components/TopNavbar";
+import { TopNavbar } from "../../components/TopNavbar";
 
 export const metadata: Metadata = {
   title: "Bijaklaut | Personal Website",

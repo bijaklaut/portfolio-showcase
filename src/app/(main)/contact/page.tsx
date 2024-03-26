@@ -6,7 +6,7 @@ import {
   InstagramSvg,
   MailSvg,
   WhatsappSvg,
-} from "../../../../components/SvgGroup";
+} from "../../../components/SvgGroup";
 import { motion } from "framer-motion";
 
 export default function Contact() {
