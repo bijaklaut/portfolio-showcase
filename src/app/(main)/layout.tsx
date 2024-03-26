@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Personal website to showcase Hudaa Eka Saputra' Portfolios",
 };
 
-export default function RootLayout({
+export default function MainLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
