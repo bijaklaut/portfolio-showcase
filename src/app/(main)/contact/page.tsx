@@ -113,12 +113,13 @@ export default function Contact() {
           <InstagramSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </motion.a>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-md bg-gradient-to-br from-white/20 via-primary/30 to-white/20 px-5 py-2 text-sm text-white backdrop-blur-md transition-transform duration-300 hover:-translate-y-2">
-        <span>{"Special thanks to "}</span>
-        <Link className="font-semibold" href={"https://www.chronark.com"}>
-          Chronark
-        </Link>
-      </div>
+      <Link
+        href={"https://www.chronark.com"}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-md bg-gradient-to-br from-zinc-100/20 via-darkprimary/30 to-zinc-100/20 px-5 py-2 text-sm text-white backdrop-blur-md transition-transform duration-300 hover:-translate-y-2"
+      >
+        Special thanks to
+        <span className="font-semibold text-primary">{" Chronark"}</span>
+      </Link>
     </section>
   );
 }
