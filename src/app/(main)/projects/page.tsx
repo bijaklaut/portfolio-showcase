@@ -1,3 +1,5 @@
+import { ProjectTypes } from "@/utils/types";
+import { promises as fs } from "fs";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -6,7 +8,10 @@ export const metadata: Metadata = {
   description: "Personal website to showcase Hudaa Eka Saputra' Portfolios",
 };
 
-export default function Projects() {
+export default async function Projects() {
+  const file = await fs.readFile(process.cwd() + "/src/projects.json", "utf8");
+  const projects: ProjectTypes[] = JSON.parse(file);
+
   return (
     <section className="bg-gradient-to-b from-darkprimary to-black py-16">
       <div className="mx-auto w-full max-w-[1280px] p-5">
@@ -32,7 +37,7 @@ export default function Projects() {
                   <h3 className="text-2xl font-semibold text-white">
                     {project.project_name}
                   </h3>
-                  <p className="my-5">{project.description}</p>
+                  <p className="my-5">{project.short_desc}</p>
                 </div>
                 <div className="flex items-center gap-5 text-sm">
                   {project.demo_link && (
@@ -46,9 +51,8 @@ export default function Projects() {
                       </Link>
                     </div>
                   )}
-
                   <Link
-                    href={project.detail_link}
+                    href={`projects/${project.slug}`}
                     className="transition-all duration-300 hover:text-white"
                   >
                     Details
@@ -62,27 +66,3 @@ export default function Projects() {
     </section>
   );
 }
-
-const projects = [
-  {
-    project_name: "Heymale Clone E-Commerce",
-    description: `This project is a modified clone version of Heymale Official
-      website. The creation of this project is for personal use only`,
-    demo_link: `#`,
-    detail_link: `/projects/anything`,
-    creation_date: "March, 2024",
-  },
-  {
-    project_name: "Heymale Clone - Administrator",
-    description: `Administrator side of Heymale Clone E-Commerce website, which handle administration task of Heymale Clone E-Commerce`,
-    demo_link: `#`,
-    detail_link: `/projects/anything`,
-    creation_date: "March, 2024",
-  },
-  {
-    project_name: "Heymale Clone - API Service",
-    description: `API Service that provide and support Heymale Clone Administrator run its functionality`,
-    detail_link: `/projects/anything`,
-    creation_date: "March, 2024",
-  },
-];
