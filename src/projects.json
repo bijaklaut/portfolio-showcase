@@ -1,0 +1,52 @@
+[
+  {
+    "project_name": "Heymale Clone E-Commerce",
+    "slug": "heymale-clone-ecommerce",
+    "short_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only",
+    "long_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only",
+    "demo_link": "",
+    "repo_link": "",
+    "features": [""],
+    "tech": [""],
+    "images": [""],
+    "creation_date": "March, 2024"
+  },
+  {
+    "project_name": "Heymale Clone Administrator",
+    "slug": "heymale-clone-administrator",
+    "short_desc": "Administrator side of Heymale Clone E-Commerce website, which handle administration task of Heymale Clone E-Commerce",
+    "long_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only.",
+    "demo_link": "https://heymale-clone-admin.vercel.app",
+    "repo_link": "https://github.com/bijaklaut/heymale-clone-admin",
+    "features": [
+      "Performing out CRUD processes related to e-commerce administration",
+      "Handling order, starting from monitoring customer payments, confirming orders, until making delivery requests",
+      "Payment Gateway, administrators do not need to validate customer payments manually",
+      "Shipment API, allows and makes it easier for administrators to ship orders"
+    ],
+    "tech": [
+      "HTML",
+      "Tailwind CSS",
+      "Javacript",
+      "Typescript",
+      "Next JS",
+      "Node JS",
+      "React JS",
+      "Daisy UI"
+    ],
+    "images": [""],
+    "creation_date": "March, 2024"
+  },
+  {
+    "project_name": "Heymale Clone API Service",
+    "slug": "heymale-clone-api",
+    "short_desc": "API Service that provide and support Heymale Clone Administrator run its functionality",
+    "long_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only",
+    "demo_link": "",
+    "repo_link": "https://github.com/bijaklaut/heymale-clone-server",
+    "features": [""],
+    "tech": [""],
+    "images": [""],
+    "creation_date": "March, 2024"
+  }
+]
