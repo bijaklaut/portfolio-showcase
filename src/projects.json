@@ -6,9 +6,9 @@
     "long_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only",
     "demo_link": "",
     "repo_link": "",
-    "features": [""],
-    "tech": [""],
-    "images": [""],
+    "features": [],
+    "tech": [],
+    "images": [],
     "creation_date": "March, 2024"
   },
   {
@@ -34,7 +34,7 @@
       "React JS",
       "Daisy UI"
     ],
-    "images": [""],
+    "images": [],
     "creation_date": "March, 2024"
   },
   {
@@ -44,9 +44,9 @@
     "long_desc": "This project is a modified clone version of Heymale Official website. The creation of this project is for personal use only",
     "demo_link": "",
     "repo_link": "https://github.com/bijaklaut/heymale-clone-server",
-    "features": [""],
-    "tech": [""],
-    "images": [""],
+    "features": [],
+    "tech": [],
+    "images": [],
     "creation_date": "March, 2024"
   }
 ]

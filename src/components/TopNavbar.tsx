@@ -33,6 +33,7 @@ export const TopNavbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
+    scrollHandler();
     return () => {
       window.removeEventListener("scroll", scrollHandler);
     };

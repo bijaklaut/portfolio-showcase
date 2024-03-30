@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeftSvg, ArrowRightSvg, CrossSvg, EyeSvg } from "./SvgGroup";
 import cx from "classnames";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/variantsMotion";
 
 interface ImageTypes {
   url: string;
@@ -23,12 +25,12 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
 
   const overlayClass = useCallback(() => {
     return cx({
-      "fixed left-0 flex right-0 z-30 items-center justify-center overflow-hidden bg-white/10 backdrop-blur-md transition-all duration-200 ease-in-out":
+      "fixed flex z-30 top-0 left-0 right-0 w-full h-screen items-center justify-center overflow-hidden bg-white/10 backdrop-blur-md transition-all duration-200 ease-in-out":
         true,
-      "top-0 bottom-0 opacity-100": showOverlay,
-      "top-auto -bottom-full opacity-0": !showOverlay,
+      // "top-0 bottom-0 opacity-100": showOverlay,
+      // "top-auto -bottom-full opacity-0": !showOverlay,
     });
-  }, [showOverlay]);
+  }, []);
 
   const thumbnailOverlayClass = useCallback(
     (imageUrl: string) => {
@@ -56,7 +58,9 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
         );
       }
       setShowOverlay((prev) => !prev);
-      setActiveImage(image);
+      setTimeout(() => {
+        setActiveImage(image);
+      }, 300);
     },
     [showOverlay, timer],
   );
@@ -81,16 +85,14 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
     setCurrentIndex(newIndex);
   }, [currentIndex, images.length]);
 
-  const previousSlide = () => {
+  const previousSlide = useCallback(() => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
 
     setCurrentIndex(newIndex);
-  };
+  }, []);
 
-  const goToIndex = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const goToIndex = useCallback((index: number) => setCurrentIndex(index), []);
 
   const getParentWidth = useCallback(() => {
     if (parentRef.current) {
@@ -191,8 +193,31 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
           <div className="aspect-video h-[400px] animate-pulse rounded-md bg-primary/50 backdrop-blur-md"></div>
         )}
       </div>
-      <div ref={overlayRef} className={overlayClass()}>
-        <div className="relative flex max-w-[900px] flex-col items-center gap-5">
+      <motion.div
+        initial={{ y: "-100%" }}
+        animate={
+          showOverlay
+            ? { y: 0, transition: { duration: 0.3, ease: "easeInOut" } }
+            : {
+                y: "-100%",
+                transition: {
+                  when: "afterChildren",
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              }
+        }
+        ref={overlayRef}
+        className={overlayClass()}
+      >
+        <motion.div
+          variants={fadeIn}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="relative flex max-w-[900px] flex-col items-center gap-5"
+        >
           {activeImage && (
             <Image
               src={activeImage}
@@ -248,8 +273,8 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
           >
             <CrossSvg className="h-10 w-10 fill-current" />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };
