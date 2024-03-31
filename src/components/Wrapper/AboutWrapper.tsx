@@ -6,22 +6,25 @@ import { CodeSvg, DatabaseSvg } from "../SvgGroup";
 
 const AboutWrapper = () => {
   return (
-    <section className="pb-20">
-      <div className="about mb-32 items-center bg-gradient-to-b from-darkprimary to-black px-32 py-32">
+    <section className="pb-24">
+      <div className="about items-center bg-gradient-to-b from-darkprimary to-black px-8 py-16 sm:mb-10 sm:px-16 sm:pt-32 md:mb-20 md:p-40 lg:px-32 lg:py-48 xl:mb-28">
         <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView={"visible"}
           viewport={{ once: false }}
-          className="flex w-full items-center gap-10"
+          className="mx-auto flex w-full max-w-[1024px] flex-col items-center lg:flex-row lg:gap-10"
         >
           <motion.div
             variants={fadeIn}
-            className="min-w-[40%] text-center text-5xl font-semibold"
+            className="mb-20 text-center text-4xl font-semibold sm:min-w-[40%] sm:text-5xl"
           >
             About Me
           </motion.div>
-          <motion.div variants={fadeIn} className="text-justify text-lightgray">
+          <motion.div
+            variants={fadeIn}
+            className="text-pretty text-justify text-lightgray"
+          >
             A Front-End Developer with over 3 years of learning experience
             website application development. Skilled in designing and developing
             web applications using up-to-date technologies. Proficiently using
@@ -39,12 +42,12 @@ const AboutWrapper = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="flex flex-col items-center justify-center gap-20">
+      <div className="flex flex-col items-center justify-center px-5 pt-16">
         <motion.h3
           variants={slideIn}
           initial="hidden"
           whileInView={"visible"}
-          className="text-center text-4xl font-semibold"
+          className="mb-20 text-center text-4xl font-semibold"
         >
           Super
           <motion.span
@@ -59,11 +62,12 @@ const AboutWrapper = () => {
           variants={slideIn}
           initial="hidden"
           whileInView={"visible"}
-          className="flex w-full items-stretch justify-center gap-14"
+          viewport={{ once: false }}
+          className="flex w-full flex-col items-stretch justify-center gap-5 sm:gap-14 lg:flex-row lg:gap-5"
         >
           <motion.div
             variants={slideIn}
-            className="flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-darkprimary px-5 py-14 text-lightgray"
+            className="mx-auto flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-darkprimary px-5 py-14 text-lightgray lg:mx-0"
           >
             <motion.div
               variants={slideIn}
@@ -97,7 +101,7 @@ const AboutWrapper = () => {
           </motion.div>
           <motion.div
             variants={slideIn}
-            className="flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-darkprimary px-5 py-14 text-lightgray"
+            className="mx-auto flex w-full max-w-[450px] flex-col items-center gap-3 rounded-lg bg-darkprimary px-5 py-14 text-lightgray lg:mx-0"
           >
             <motion.div
               variants={slideIn}

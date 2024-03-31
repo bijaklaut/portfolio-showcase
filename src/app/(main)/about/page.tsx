@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { CodeSvg, DatabaseSvg } from "../../../components/SvgGroup";
 import AboutWrapper from "@/components/Wrapper/AboutWrapper";
 
 export const metadata: Metadata = {
