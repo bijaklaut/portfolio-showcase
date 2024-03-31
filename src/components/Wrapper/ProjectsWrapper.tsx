@@ -12,7 +12,7 @@ const ProjectsWrapper = ({ projects }: { projects: ProjectTypes[] }) => {
         variants={slideIn}
         initial="hidden"
         whileInView={"visible"}
-        className="mx-auto w-full max-w-[1536px] p-5 sm:p-8 lg:px-16"
+        className="mx-auto w-full max-w-[1400px] p-5 sm:p-8 lg:px-16"
       >
         <motion.div variants={slideIn} className="header flex flex-col gap-10">
           <h1 className="text-5xl font-semibold">Projects</h1>
@@ -31,7 +31,7 @@ const ProjectsWrapper = ({ projects }: { projects: ProjectTypes[] }) => {
               <motion.div
                 variants={slideIn}
                 key={index}
-                className="card relative flex w-full max-w-[500px] flex-col justify-between gap-5 rounded-md border border-lightgray/50 p-5 text-lightgray md:max-w-[48%] xl:max-w-[32%]"
+                className="card relative flex w-full max-w-[500px] flex-col justify-between gap-5 rounded-md border border-lightgray/50 bg-darkprimary/20 p-5 text-lightgray md:max-w-[48%] xl:max-w-[32%]"
               >
                 <div className="mb-5 flex flex-col gap-5">
                   <span className="text-lightgray/60">
