@@ -8,14 +8,14 @@ import ContactItem from "../ContactItem";
 const ContactWrapper = () => {
   return (
     <section className="relative z-0 h-screen w-full bg-gradient-to-b from-darkprimary to-black">
-      <div className="contact-wrapper absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1 md:gap-10">
+      <div className="contact-wrapper absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-3 md:gap-10">
         {/* Github */}
         <ContactItem
           href="https://www.github.com/bijaklaut"
           itemText="Github"
           custom={1}
         >
-          <GithubSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
+          <GithubSvg className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </ContactItem>
         {/* Whatsapp */}
         <ContactItem
@@ -23,7 +23,7 @@ const ContactWrapper = () => {
           itemText="Whatsapp"
           custom={2}
         >
-          <WhatsappSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
+          <WhatsappSvg className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </ContactItem>
         {/* Email */}
         <ContactItem
@@ -31,7 +31,7 @@ const ContactWrapper = () => {
           itemText="Email"
           custom={1}
         >
-          <MailSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
+          <MailSvg className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </ContactItem>
         {/* Instagram */}
         <ContactItem
@@ -39,7 +39,7 @@ const ContactWrapper = () => {
           itemText="Instagram"
           custom={2}
         >
-          <InstagramSvg className="absolute left-1/2 top-1/2 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
+          <InstagramSvg className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 fill-white md:h-12 md:w-12" />
         </ContactItem>
       </div>
       <motion.a
@@ -47,7 +47,7 @@ const ContactWrapper = () => {
         initial={"hidden"}
         whileInView={"visible"}
         href={"https://www.chronark.com"}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-md bg-gradient-to-br from-zinc-100/20 via-darkprimary/30 to-zinc-100/20 px-5 py-2 text-sm text-white backdrop-blur-md transition-transform duration-300 hover:-translate-y-2"
+        className="absolute bottom-24 left-1/2 w-full max-w-[230px] -translate-x-1/2 rounded-md bg-gradient-to-br from-zinc-100/20 via-darkprimary/30 to-zinc-100/20 py-2 text-center text-sm text-white backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 sm:bottom-10"
       >
         Special thanks to
         <span className="font-semibold text-primary">{" Chronark"}</span>
