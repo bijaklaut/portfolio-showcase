@@ -4,7 +4,6 @@ export const slideIn: Variants = {
   hidden: {
     opacity: 0,
     x: "-50px",
-    transition: { when: "afterChildren" },
   },
   visible: {
     opacity: 1,
