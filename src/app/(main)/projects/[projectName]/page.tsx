@@ -13,6 +13,7 @@ export default async function ProjectDetail({
 }: {
   params: { projectName: string };
 }) {
+  console.log("CWD: ", process.cwd());
   const file = await fs.readFile(process.cwd() + "/src/projects.json", "utf8");
   const projects: ProjectTypes[] = JSON.parse(file);
   const project = projects.find((item) => item.slug == params.projectName);
