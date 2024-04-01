@@ -77,7 +77,7 @@ const AboutWrapper = () => {
             </motion.div>
             <motion.span
               variants={slideIn}
-              className="text-xl font-semibold text-white"
+              className="text-center text-xl font-semibold text-white"
             >
               Frontend Web Development
             </motion.span>
@@ -111,7 +111,7 @@ const AboutWrapper = () => {
             </motion.div>
             <motion.span
               variants={slideIn}
-              className="text-xl font-semibold text-white"
+              className="text-center text-xl font-semibold text-white"
             >
               Backend Web Development
             </motion.span>
