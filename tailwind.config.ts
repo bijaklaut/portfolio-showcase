@@ -18,14 +18,6 @@ const config: Config = {
         "3xl": "1920px",
       },
       keyframes: {
-        moveltr: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(600px)" },
-        },
-        wiggle: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" },
-        },
         title: {
           "0%": {
             "line-height": "0%",
@@ -86,7 +78,6 @@ const config: Config = {
         },
       },
       animation: {
-        ltr: "moveltr 5s linear infinite forwards",
         title: "title 3s ease-in forwards",
         "fade-left": "fade-left 3s ease-in-out forwards",
         "fade-right": "fade-right 3s ease-in-out forwards",

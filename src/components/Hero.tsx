@@ -14,7 +14,7 @@ export const Hero = () => {
         <Link href={"/contact"}>Contact</Link>
       </nav>
       <div className="h-px w-screen animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <h1 className="font-outline z-10 w-full animate-title cursor-default whitespace-nowrap text-wrap bg-white bg-clip-text text-center text-4xl font-semibold text-transparent transition-all duration-1000 sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[80px]">
+      <h1 className="font-outline z-10 w-full animate-title cursor-default whitespace-nowrap bg-white bg-clip-text text-center text-3xl font-semibold text-transparent transition-all duration-1000 sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[80px]">
         Hudaa Eka Saputra
       </h1>
       <div className="h-px w-screen animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
