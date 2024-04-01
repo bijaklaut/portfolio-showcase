@@ -3,6 +3,7 @@ import { ProjectTypes } from "@/utils/types";
 import { promises as fs } from "fs";
 import { Metadata } from "next";
 import Link from "next/link";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Hudaa Eka Saputra | Projects",
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Projects() {
-  const file = await fs.readFile(process.cwd() + "/src/projects.json", "utf8");
+  const file = await fs.readFile(
+    path.join(process.cwd(), "/src/projects.json"),
+    "utf8",
+  );
   const projects: ProjectTypes[] = JSON.parse(file);
 
   return <ProjectsWrapper projects={projects} />;

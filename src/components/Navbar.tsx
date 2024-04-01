@@ -38,7 +38,6 @@ export const Navbar = () => {
   }, [navbarRef]);
 
   const getPrevPath = useCallback(() => {
-    console.log("PATHNAME: ", pathname);
     const splittedPath = pathname.split("/");
     splittedPath.pop();
 

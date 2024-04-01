@@ -19,7 +19,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
   const [parentWidth, setParentWidth] = useState(0);
   const [loading, setLoading] = useState(true);
   const [showOverlay, setShowOverlay] = useState(false);
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImage, setActiveImage] = useState("/img/slide_1.jpg");
   const parentRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -344,7 +344,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="relative flex w-full flex-col items-center gap-5 border border-red-500 px-3 py-10"
+          className="relative flex w-full flex-col items-center gap-5 px-3 py-10"
         >
           <div className="relative">
             <Image
@@ -366,7 +366,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
           {/* Thumbnail */}
           <div
             id="thumbnail-container"
-            className="relative max-w-[90%] border border-red-500 sm:max-w-[450px] lg:max-w-[700px] xl:max-w-[800px]"
+            className="relative max-w-[90%] sm:max-w-[450px] lg:max-w-[700px] xl:max-w-[800px]"
           >
             <button
               className="thumbnail-arrow absolute -bottom-10 left-[45%] z-10 -translate-x-1/2 rounded-full bg-primary/50 p-1 transition-colors duration-200 hover:bg-primary/80 active:bg-primary/80 sm:-left-2 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:p-2"
