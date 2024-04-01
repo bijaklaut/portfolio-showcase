@@ -12,17 +12,17 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
     <section className="min-h-screen">
       {project ? (
         <>
-          <div className="header w-full bg-gradient-to-b from-darkprimary to-black py-40">
+          <div className="header w-full bg-gradient-to-b from-darkprimary to-black px-10 py-24 sm:px-16 sm:py-40">
             <motion.div
               variants={fadeIn}
               initial="hidden"
               whileInView={"visible"}
               viewport={{ once: false }}
-              className="header-content mx-auto flex w-full max-w-[1024px] flex-col gap-10"
+              className="header-content mx-auto flex w-full max-w-[1024px] flex-col gap-16 sm:gap-10"
             >
               <motion.h1
                 variants={fadeIn}
-                className="text-center text-5xl font-semibold"
+                className="text-center text-4xl font-semibold lg:text-5xl"
               >
                 {project.project_name}
               </motion.h1>
@@ -40,12 +40,12 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
               </motion.p>
               <motion.div
                 variants={fadeIn}
-                className="flex items-center justify-center gap-5"
+                className="flex flex-wrap items-center justify-center gap-5 [&>*]:max-sm:grow"
               >
                 {project.demo_link && (
                   <Link
                     href={project.demo_link}
-                    className="flex items-center justify-center gap-2 rounded-md border border-primary/70 px-4 py-1 text-center transition-all duration-300 hover:bg-primary"
+                    className="flex items-center justify-center gap-2 rounded-md border border-primary/70 px-4 py-2 text-center transition-all duration-300 hover:bg-primary"
                   >
                     <span>Live Demo</span>
                     <RedirectArrowSvg className="h-5 w-5 stroke-current" />
@@ -54,7 +54,7 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
                 {project.repo_link && (
                   <Link
                     href={project.repo_link}
-                    className="flex items-center justify-center gap-2 rounded-md border border-primary/70 px-4 py-1 text-center transition-all duration-300 hover:bg-primary"
+                    className="flex items-center justify-center gap-2 rounded-md border border-primary/70 px-4 py-2 text-center transition-all duration-300 hover:bg-primary"
                   >
                     <span>See Repository</span>
                     <GithubSvg className="h-5 w-5 fill-current" />
@@ -69,7 +69,7 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
               initial="hidden"
               whileInView={"visible"}
               viewport={{ once: false, margin: "-100px 0px -100px 0px" }}
-              className="mx-auto grid w-full max-w-[1024px] grid-cols-2 items-center gap-10 rounded-md px-10 py-40 text-center"
+              className="mx-auto flex w-full max-w-[900px] flex-col items-center gap-20 rounded-md px-10 pb-32 pt-24 text-center md:grid md:grid-cols-2 md:pb-40 md:pt-36"
             >
               <motion.h3
                 variants={slideIn}
@@ -79,12 +79,12 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
               </motion.h3>
               <motion.div
                 variants={slideIn}
-                className="mx-auto flex w-full max-w-[700px] flex-wrap items-center justify-stretch gap-2 text-lightgray"
+                className="mx-auto flex w-full max-w-[700px] flex-wrap items-center justify-center gap-3 text-lightgray md:justify-stretch"
               >
                 {project.tech.map((item, index) => (
                   <div
                     key={index}
-                    className="cursor-default rounded-lg border border-primary px-3 py-px text-white transition-all duration-200 hover:bg-primary"
+                    className="cursor-default rounded-lg border border-primary px-3 py-px text-white transition-all duration-200 hover:bg-primary max-md:grow max-md:text-lg"
                   >
                     {item}
                   </div>
@@ -92,9 +92,8 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
               </motion.div>
             </motion.div>
           )}
-
           {project.features.length > 0 && (
-            <div className="mb-20 mt-32 min-h-[300px] w-full bg-darkprimary/80 px-10 py-20">
+            <div className="min-h-[300px] w-full bg-darkprimary/80 px-10 py-24">
               <motion.div
                 variants={fadeIn}
                 initial="hidden"
@@ -126,16 +125,16 @@ const ProjectDetailWrapper = ({ project }: { project: ProjectTypes }) => {
             </div>
           )}
           {images.length > 0 && (
-            <div className="snapshot mt-24 w-full bg-gradient-to-t from-darkprimary to-black pb-28 pt-10">
+            <div className="snapshot w-full overflow-hidden bg-gradient-to-t from-darkprimary to-black pb-40 pt-32 2xl:pb-24 2xl:pt-32">
               <motion.div
                 variants={fadeIn}
                 initial="hidden"
                 whileInView={"visible"}
                 viewport={{ once: false }}
-                className="snapshot-content mx-auto flex w-full max-w-[1024px] flex-col items-center justify-center gap-14"
+                className="snapshot-content mx-auto flex w-full max-w-[1024px] flex-col items-center justify-center gap-14 px-10"
               >
                 <h2 className="text-center text-3xl font-semibold">Snapshot</h2>
-                <div className="flex gap-4 px-5 py-2 [&>*:has(:checked)]:bg-primary/80 [&>*:not(:has(:checked)):hover]:bg-darkprimary/100 [&>*:not(:has(:checked))]:bg-darkprimary/50 [&>*]:cursor-pointer [&>*]:rounded-xl [&>*]:px-8 [&>*]:py-2 [&>*]:transition-all [&>*]:duration-300">
+                <div className="flex flex-wrap justify-center gap-2 py-2 sm:gap-4 [&>*:has(:checked)]:bg-primary/80 [&>*:not(:has(:checked)):hover]:bg-darkprimary/100 [&>*:not(:has(:checked))]:bg-darkprimary/50 [&>*]:grow [&>*]:cursor-pointer [&>*]:rounded-xl [&>*]:px-8 [&>*]:py-2 [&>*]:text-center [&>*]:transition-all [&>*]:duration-300">
                   <label htmlFor="mobile">
                     <input
                       className="hidden"
@@ -198,6 +197,16 @@ const images = [
     url: `/img/slide_4.jpg`,
     author: "Sea Sage",
     title: "Dr. Strange",
+  },
+  {
+    url: `/img/slide_5.jpg`,
+    author: "Sea Sage",
+    title: "Black Panther",
+  },
+  {
+    url: `/img/slide_5.jpg`,
+    author: "Sea Sage",
+    title: "Black Panther",
   },
   {
     url: `/img/slide_5.jpg`,
