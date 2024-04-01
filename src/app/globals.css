@@ -33,9 +33,9 @@ body {
 }
 
 .fixed-navbar {
-  @apply bg-darkprimary/10 shadow-md backdrop-blur-[8px];
+  @apply border-white/20 bg-darkprimary/10 shadow-md backdrop-blur-[8px];
 }
 
 .rest-navbar {
-  @apply bg-transparent;
+  @apply border-white/0 bg-transparent;
 }

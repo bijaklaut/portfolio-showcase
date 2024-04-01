@@ -11,7 +11,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import cx from "classnames";
 
-export const TopNavbar = () => {
+export const Navbar = () => {
   const navbarRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const [prevPath, setPrevPath] = useState("");
@@ -65,7 +65,7 @@ export const TopNavbar = () => {
     <>
       <nav
         ref={navbarRef}
-        className="rest-navbar fixed z-10 hidden h-16 w-full justify-between py-5 text-white/60 transition-all duration-300 sm:flex sm:px-8 lg:px-16"
+        className="rest-navbar fixed z-10 hidden h-16 w-full justify-between border-b py-5 text-white/60 transition-all duration-200 sm:flex sm:px-8 lg:px-16"
       >
         <div className="[&>*:hover]:text-white [&>*]:transition-all [&>*]:duration-300">
           <Link href={prevPath}>

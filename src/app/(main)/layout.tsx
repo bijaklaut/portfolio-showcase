@@ -1,5 +1,5 @@
+import { Navbar } from "@/components/Navbar";
 import type { Metadata } from "next";
-import { TopNavbar } from "../../components/TopNavbar";
 
 export const metadata: Metadata = {
   title: "Bijaklaut | Personal Website",
@@ -13,7 +13,7 @@ export default function MainLayout({
 }>) {
   return (
     <div className="relative min-h-screen w-full">
-      <TopNavbar />
+      <Navbar />
       <main>{children}</main>
     </div>
   );
