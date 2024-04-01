@@ -27,8 +27,6 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
     return cx({
       "fixed flex z-30 top-0 left-0 right-0 w-full h-screen items-center justify-center bg-white/10 backdrop-blur-md transition-all duration-200 ease-in-out":
         true,
-      // "top-0 bottom-0 opacity-100": showOverlay,
-      // "top-auto -bottom-full opacity-0": !showOverlay,
     });
   }, []);
 
@@ -203,18 +201,18 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
   }, []);
 
   const nextSlide = useCallback(() => {
-    const isLastSlide = currentIndex === images.length - 1;
+    const isLastSlide = currentIndex == images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
 
     setCurrentIndex(newIndex);
   }, [currentIndex, images.length]);
 
   const previousSlide = useCallback(() => {
-    const isFirstSlide = currentIndex === 0;
+    const isFirstSlide = currentIndex == 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
 
     setCurrentIndex(newIndex);
-  }, []);
+  }, [currentIndex]);
 
   const goToIndex = useCallback((index: number) => setCurrentIndex(index), []);
 
@@ -253,7 +251,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
       {/* Main Slider */}
       <div
         ref={parentRef}
-        className="flex aspect-video w-full max-w-[600px] flex-col gap-5 rounded-md"
+        className="flex aspect-video h-auto w-full max-w-[600px] flex-col gap-5 rounded-md"
       >
         {!loading ? (
           <div className="relative w-full">
@@ -274,25 +272,29 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
             </div>
 
             {/* Background */}
-            <div className="w-full overflow-hidden rounded-md">
+            <div className="aspect-video h-auto w-full overflow-hidden rounded-md">
               <div
                 style={{
                   width: `${parentWidth * images.length}px`,
                   transform: `translateX(${-(currentIndex * parentWidth)}px)`,
                 }}
-                className={"flex h-auto w-full transition-all duration-300"}
+                className={
+                  "grid h-auto w-full grid-flow-col transition-all duration-300"
+                }
               >
                 {images.map((image, index) => {
                   return (
-                    <Image
-                      key={index}
-                      src={image.url}
-                      width={1000}
-                      height={1000}
-                      alt={image.title}
-                      className="aspect-video h-auto w-full"
-                      onClick={() => overlayHandler(image.url)}
-                    />
+                    <div key={index} className="aspect-video w-full">
+                      <Image
+                        key={index}
+                        src={image.url}
+                        width={1000}
+                        height={1000}
+                        alt={image.title}
+                        className="h-auto max-w-full"
+                        onClick={() => overlayHandler(image.url)}
+                      />
+                    </div>
                   );
                 })}
               </div>
@@ -315,7 +317,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
             </div>
           </div>
         ) : (
-          <div className="aspect-video h-[400px] animate-pulse rounded-md bg-primary/50 backdrop-blur-md"></div>
+          <div className="aspect-video w-full animate-pulse rounded-md bg-darkprimary backdrop-blur-md"></div>
         )}
       </div>
 
@@ -366,7 +368,7 @@ export const Slider = ({ images }: { images: ImageTypes[] }) => {
           {/* Thumbnail */}
           <div
             id="thumbnail-container"
-            className="relative max-w-[90%] sm:max-w-[450px] lg:max-w-[700px] xl:max-w-[800px]"
+            className="relative w-full sm:max-w-[450px] lg:max-w-[700px] xl:max-w-[800px]"
           >
             <button
               className="thumbnail-arrow absolute -bottom-10 left-[45%] z-10 -translate-x-1/2 rounded-full bg-primary/50 p-1 transition-colors duration-200 hover:bg-primary/80 active:bg-primary/80 sm:-left-2 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:p-2"

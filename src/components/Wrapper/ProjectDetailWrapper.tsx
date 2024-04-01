@@ -203,14 +203,4 @@ const images = [
     author: "Sea Sage",
     title: "Black Panther",
   },
-  {
-    url: `/img/slide_5.jpg`,
-    author: "Sea Sage",
-    title: "Black Panther",
-  },
-  {
-    url: `/img/slide_5.jpg`,
-    author: "Sea Sage",
-    title: "Black Panther",
-  },
 ];
